@@ -14,7 +14,7 @@ st.markdown("<h1 style='text-align: center; color: white;'>🏡 Real Estate Pric
 st.markdown("<h3 style='text-align: center; color: gray;'>Explore | Analyze | Predict | Recommend</h3>", unsafe_allow_html=True)
 
 # Banner image (replace with your own if needed)
-st.image("https://images.unsplash.com/photo-1560518883-ce09059eeffa", use_column_width=True)
+# st.image("https://images.unsplash.com/photo-1560518883-ce09059eeffa", use_column_width=True)
 
 # Welcome message
 st.markdown("""
@@ -22,7 +22,7 @@ st.markdown("""
     <p style='font-size: 18px; color: white;'>
         Welcome to the Real Estate App! This project lets you:
         <ul style='color: white;'>
-            <li>🔍 Explore historical trends in property prices</li>
+            
             <li>📈 Predict future property values using ML</li>
             <li>🧠 Analyze key influencing factors</li>
             <li>🤝 Get property recommendations based on your preferences</li>
