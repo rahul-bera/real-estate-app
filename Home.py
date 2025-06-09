@@ -1,5 +1,16 @@
 import os
 import gdown
+import streamlit as st
+
+st.set_page_config(
+    page_title="Hello",
+    page_icon="w",
+
+)
+
+st.write("# Welcome to Streamlit! ")
+
+st.sidebar.success("Select a demo above.")
 
 # Create datasets directory if not exists
 os.makedirs('real-estate-app/datasets', exist_ok=True)
@@ -20,17 +31,7 @@ for filename, file_id in files_to_download.items():
         print(f"Downloading {filename}...")
         gdown.download(id=file_id, output=file_path, quiet=False)
 
-import streamlit as st
 
-st.set_page_config(
-    page_title="Hello",
-    page_icon="w",
-
-)
-
-st.write("# Welcome to Streamlit! ")
-
-st.sidebar.success("Select a demo above.")
 
 
 import os

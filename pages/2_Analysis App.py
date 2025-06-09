@@ -4,6 +4,8 @@ import plotly.express as px
 import pickle
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+import os
+import gdown
 
 
 st.set_page_config(page_title= "Plotting Demo")
@@ -13,7 +15,19 @@ st.title('Analytics')
 # new_df = pd.read_csv('datasets/data_viz1.csv')
 
 new_df = pd.read_csv('datasets/data_viz1.csv')
-feature_text = pickle. load(open('datasets/feature_text.pkl','rb'))
+def download_if_not_exists(file_path, file_id):
+    if not os.path.exists(file_path):
+        url = f"https://drive.google.com/uc?export=download&id={file_id}"
+        gdown.download(url, file_path, quiet=False)
+
+# Download and load dataset
+new_df = pd.read_csv('datasets/data_viz1.csv')
+
+# 🔽 Auto-download feature_text.pkl if not found
+download_if_not_exists('datasets/feature_text.pkl', '1OM2sRJ1z9ScjC7GLWYXMycvpiSqyUISb')
+feature_text = pickle.load(open('datasets/feature_text.pkl', 'rb'))
+
+# feature_text = pickle. load(open('datasets/feature_text.pkl','rb'))
 
 # group_df = new_df.groupby('sector') .mean() [['price',
 #                                               'price_per_sqft',

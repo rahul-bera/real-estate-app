@@ -20,11 +20,20 @@ if not os.path.exists('pipeline.pkl'):
         st.success('pipeline.pkl downloaded!')
 
 
+def download_if_not_exists(file_name, file_id):
+    if not os.path.exists(file_name):
+        url = f"https://drive.google.com/uc?export=download&id={file_id}"
+        gdown.download(url, file_name, quiet=False)
 
-
-
-
+# Example for df.pkl
+download_if_not_exists('df.pkl', '1ocVXvHImvBTbOJhq6LWtiraZUZcBkSgw')
 df = joblib.load('df.pkl')
+
+
+
+# df = joblib.load('df.pkl')
+# df = joblib.load('df.pkl')
+
 pipeline = joblib.load('pipeline.pkl')
 
 # with open('df.pkl', 'rb') as file:
